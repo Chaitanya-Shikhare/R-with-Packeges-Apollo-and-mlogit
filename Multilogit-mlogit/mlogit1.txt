@@ -1,0 +1,9 @@
+library(mlogit)
+
+library(tidyr)
+
+data("Mode", package = "mlogit")
+
+mode <- mlogit.data(Mode, shape = "wide", choice = "choice", varying = c(2:9))
+
+summary(mode)

@@ -1,0 +1,9 @@
+library(mlogit)
+
+data("Heating")
+
+H <- mlogit.data(Heating, shape = "wide", choice = "depvar", varying = c(3:12))
+
+heat.mnl <- mlogit(depvar ~ ic + oc | rooms, H)
+
+Test whether the IIA property holds for heat.mnl. For the Hausman-McFadden-Test consider the subset c("er","gc","gr","hp").
