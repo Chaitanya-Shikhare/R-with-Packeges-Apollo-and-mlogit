@@ -1,0 +1,6 @@
+library(mlogit)
+
+data("Heating")
+H <- mlogit.data(Heating, shape = "wide", choice = "depvar", varying = c(3:12))
+
+hc <- mlogit(depvar ~ ic + oc | rooms, H)
